@@ -20,22 +20,25 @@ x = []
 y = []
 for name in files:
     if re.match("\w*\.db$",name) is not None:
+        #获取文件名称中的文件数量
         datanum1file=name[5:7]
         x.append(datanum1file)
         #print(datanum1file)
+
+        #获取文件大小
         filename=os.path.join(r'F:\sqliteTest', name)
         filesize=os.path.getsize(filename)/float(1024*1024)
         y.append(filesize)
-        print(filesize)
+        #print(filesize)
 
 #开始绘图
-#fig = plt.figure()
+#fig = plt.figure()1
 
 #names = ['5', '10', '15', '20', '25']
 #x = range(len(names))
 #y = [0.855, 0.84, 0.835, 0.815, 0.81]
 
-plt.plot(x, y, marker='*', mec='r', mfc='y',label=u'y=x^2曲线图')
+plt.plot(x, y, marker='*', mec='r', mfc='y',label=u'文件保存数量与文件大小曲线图')
 #plt.plot(x, y1, marker='*', ms=10,label=u'y=x^3曲线图')
 plt.legend()  # 让图例生效
 #plt.xticks(x)
