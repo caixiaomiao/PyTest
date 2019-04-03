@@ -3,7 +3,7 @@
 
 import psycopg2
 
-conn = psycopg2.connect(dbname='qhsoam_dev', user='pguser', password='pguser', host='10.80.5.109', port='8101')
+conn = psycopg2.connect(dbname='qhsoam_dev', user='pguser', password='pguser', host='127.0.0.1', port='8101')
 cur = conn.cursor()
 # 查询sql
 cur.execute("select wtid from onedata order by rectime desc limit 100")
